@@ -1,8 +1,10 @@
 package MONOPOLY;
 public class Cinema extends Property {
-    public Cinema(String name, Player player) {
-        super(name, player);
+    public Cinema(String name, int price , int rent) {
+
+        super(name,price,rent);
     }
+
 /*    void getTicket() {
         if(getHolder() instanceof Banker || getPlayer().equals(getHolder()))
             setRent(0);
