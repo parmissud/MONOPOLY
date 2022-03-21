@@ -1,3 +1,6 @@
+package MONOPOLY;
+import java.util.Scanner;
+
 public class MainGame {
     public void commands(String command){
         switch (command){
@@ -11,7 +14,7 @@ public class MainGame {
 
     }
     public void createGame(){
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         while (sc.hasNext){
 
         }

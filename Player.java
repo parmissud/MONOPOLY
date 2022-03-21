@@ -8,7 +8,7 @@ public class Player {
     private String name;
     public boolean inJail = false;
     private int position;
-    private int money = 1500;
+    protected int money = 1500;
     //private Property[] properties;
 
     public Player(String name){
@@ -72,5 +72,6 @@ public class Player {
     public int getNumFields(){}
     public int getNumHouses(){}
     public int getNumHotels(){}
+    public int getNumRailroads(){}
     public ColorProperty[] getHouseableProperties(){}
 }
