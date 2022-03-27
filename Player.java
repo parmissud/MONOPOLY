@@ -1,9 +1,8 @@
 package MONOPOLY;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
-import java.util.List;
+
 
 public class Player {
 
