@@ -17,8 +17,16 @@ public abstract class Property extends Square{
         return price;
     }
 
+    public void setPrice(int newPrice){
+        this.price = newPrice;
+    }
+
     public int getRent(){
         return rent;
+    }
+
+    public void setRent(int newRent){
+        this.rent = newRent;
     }
 
     public Player getOwner() {
@@ -33,6 +41,7 @@ public abstract class Property extends Square{
         owner = currentPlayer;
         currentPlayer.buy(this);
     }
+
 
     // offerBuy & doAction miss
 }

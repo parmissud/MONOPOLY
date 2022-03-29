@@ -3,6 +3,7 @@ package MONOPOLY;
 public class Fields extends Property {
     private Player owner;
     private int price;
+    public int numOfHouses;
     private House[] houses = new House[4];
     private Hotel hotel;
 
@@ -73,3 +74,5 @@ public class Fields extends Property {
     public int getNumHotels(){}
 
 }
+
+//override getrent
