@@ -4,16 +4,18 @@ public class Jail extends Square {
 
     public void sendToJail(Player jailedPlayer){
         jailedPlayer.inJail = true;
-        System.out.println("You are now in Jail for the next 5 turns");
-        // if diceNumber == 1 --> free
+        System.out.println("Player " + jailedPlayer.getName() + " is in jail now for the next 5 turns.");
     }
-    public boolean jailTurn(Player currentPlayer) { //returns true if player escaped jail on turn
-        currentPlayer.turnsInJail++;
-        System.out.print("Turn " + currentPlayer.turnsInJail);
-
-        if (currentPlayer.turnsInJail == 5) {
-            currentPlayer.inJail = false;
-        }
+    public void free(Player jailedPlayer){
+        jailedPlayer.inJail = false;
+        jailedPlayer.addMoney(-50);
+        jailedPlayer.turnsInJail = 0;
+        System.out.println("Player " + jailedPlayer.getName() + " is free now.");
+    }
+    public void freeByTurns(Player jailedPlayer){
+        jailedPlayer.inJail = false;
+        jailedPlayer.turnsInJail = 0;
+        System.out.println("Player " + jailedPlayer.getName() + " is free now.");
     }
 
 }

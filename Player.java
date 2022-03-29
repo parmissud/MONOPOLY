@@ -1,7 +1,6 @@
 package MONOPOLY;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class Player {
@@ -17,7 +16,7 @@ public class Player {
 
     public Player(String name){
         this.name = name;
-        index = 0;
+        index = 1;
     }
 
     public int index() { return index; }
@@ -42,7 +41,7 @@ public class Player {
 
 
     public void moveTo(int position){
-        if(position >= 24)
+        if(position >= 25)
             position %= 24;
 
         this.index = position;
@@ -55,7 +54,6 @@ public class Player {
             addMoney(-property.getPrice());
             properties.add(property);
             property.setOwner(this);
-            //sortPropertiesByGroup(properties);
             property.mortgaged = true;
         }
         else
@@ -74,8 +72,31 @@ public class Player {
 
     public void free(){
         inJail = false;
-        money -= 50;
+        addMoney(-50);
         turnsInJail = 0;
+    }
+
+    public void build(Fields currentField){
+        if(currentField.getOwner().equals(this)){
+            if(currentField.getNumHouses() < 4){
+                currentField.numOfHouses++;
+                addMoney(-150);
+                currentField.setRent(currentField.getNumHouses()*100 + 50);
+                currentField.setPrice(currentField.getPrice()+150);
+                System.out.println("Your House is built now. Number of houses: " + currentField.getNumHouses());
+            }
+            else if(currentField.getNumHouses() == 4 && currentField.getNumHotels() == 0){
+                addMoney(-100);
+                currentField.setPrice(currentField.getPrice()+100);
+                currentField.setRent(600);
+                System.out.println("Your Hotel is built now.");
+            }
+            else
+                System.out.println("You can not add any house or hotel.");
+        }
+        else
+            System.out.println("Sorry this property doesn't belong to you.");
+
     }
 
 

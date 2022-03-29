@@ -4,11 +4,6 @@ import java.util.Scanner;
 
 public class Airport extends Square{
 
-    public Airport(String name){
-        super(name);
-    }
-    public Airport(){}
-
     public void fly(Player currentPlayer, int position) {
         currentPlayer.moveTo(position);
         currentPlayer.setPosition(position);

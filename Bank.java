@@ -4,11 +4,6 @@ import java.util.Scanner;
 
 public class Bank extends Square{
 
-    public Bank(String name, Player currentPlayer){
-        super(name);
-    }
-    public Bank(){}
-
     public void offerInvest(Player currentPlayer){
         System.out.println("Do you want to invest? y/n");
         Scanner input = new Scanner(System.in);
