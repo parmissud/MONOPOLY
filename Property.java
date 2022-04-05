@@ -7,8 +7,8 @@ public class Property extends Square{
     protected Player owner;
     public boolean mortgaged;
 
-    public Property(String name, int price, int rent){
-        super(name);
+    public Property(int index, int price, int rent){
+        super(index);
         this.price = price;
         this.rent = rent;
     }
