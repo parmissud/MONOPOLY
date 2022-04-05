@@ -29,15 +29,25 @@ public class Property extends Square{
         this.rent = rent;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void setOwner(Player newOwner){
         owner = newOwner;
     }
 
-    public void bought(Player currentPlayer){
+    public void payRent(Player currentPlayer) {
+        currentPlayer.money -= getRent();
+        getOwner().money += getRent();
+        System.out.printf("You paid %d.", getRent());
+    }
+
+    /*public void bought(Player currentPlayer){
         owner = currentPlayer;
         currentPlayer.addMoney(-1*price);
         currentPlayer.buy(this);
-    }
+    }*/
 
     //offerBuy & doAction miss
 }
