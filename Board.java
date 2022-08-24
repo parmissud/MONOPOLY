@@ -1,11 +1,13 @@
 package MONOPOLY;
 
 public class Board {
+    private final Square[] board = new Square[24];
     private static int X = 7;
     private static int Y = 7;
     public static void main(String[] args) {
         drawBoard();
     }
+
 
     public static void drawBoard() {
         for (int i = 0; i < Y*2+1 ; i++) {
@@ -30,4 +32,6 @@ public class Board {
             }
             System.out.println("|");}
     }
+
+
 }
